@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-// import 'package:flutter_cbt/core/extensions/build_context_ext.dart';
-// import 'package:flutter_cbt/data/datasource/auth/auth_local_datasource.dart';
-// import 'package:flutter_cbt/presentation/auth/bloc/logout/logout_bloc.dart';
-// import 'package:flutter_cbt/presentation/auth/pages/login_page.dart';
-import 'package:flutter_cbt/presentation/home/pages/profile_page.dart';
+import 'package:flutter_cbt/presentation/materi/pages/materi_page.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../../profile/pages/profile_page.dart';
 import '../widgets/nav_menu.dart';
 import 'home_page.dart';
 
@@ -23,7 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const Center(child: Text('Materi')),
+    const MateriPage(),
     const Center(
       child: Text('Notif'),
     ),
@@ -78,28 +74,3 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 }
-
-// class LogoutWidget extends StatefulWidget {
-//   const LogoutWidget({
-//     super.key,
-//   });
-
-//   @override
-//   State<LogoutWidget> createState() => _LogoutWidgetState();
-// }
-
-// class _LogoutWidgetState extends State<LogoutWidget> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Center(
-//       child: ElevatedButton(
-//         onPressed: () async {
-//           context.read<LogoutBloc>().add(const LogoutEvent.logout());
-//           AuthLocalDatasource().removeAuthData();
-//           context.pushReplacement(const LoginPage());
-//         },
-//         child: const Text('Logout'),
-//       ),
-//     );
-//   }
-// }

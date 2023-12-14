@@ -54,22 +54,23 @@ class _HeaderHomeState extends State<HeaderHome> {
                       ),
                     ),
                     FutureBuilder<AuthResponseModel>(
-                        future: AuthLocalDatasource().getAuthData(),
-                        builder: (context, snapshot) {
-                          if (snapshot.hasData) {
-                            return Text(
-                              snapshot.data!.user.name,
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.w400,
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                            );
-                          } else {
-                            return const SizedBox();
-                          }
-                        }),
+                      future: AuthLocalDatasource().getAuthData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.user.name,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          );
+                        } else {
+                          return const SizedBox();
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
